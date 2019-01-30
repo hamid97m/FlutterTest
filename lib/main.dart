@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home_widget.dart';
+import 'first.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -13,6 +15,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
       ),
       home: Home(),
+      routes: <String, WidgetBuilder> {
+        '/a': (BuildContext context) => First(Colors.yellow),
+        '/b': (BuildContext context) => First(Colors.black45),
+      },
     );
   }
 }
@@ -88,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+
           ],
         ),
       ),
